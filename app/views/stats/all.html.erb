@@ -1,0 +1,9 @@
+<h1> All Player Stats </h1>
+
+<hr/>
+<% @player_names.each do |player| %>
+  <div><b><big> <%= player %> </big></b></div>
+  <% stats = Decoders::StateDecoder::load_state(player)%>
+  <%= render partial: "player_stats", locals: {stats: stats} %>
+  <hr/>
+<% end %>
